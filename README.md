@@ -1,4 +1,6 @@
 # ☕ Pacamara - a blog theme for Astro
+testing adding to the repo
+testing fixing a pull request
 **Pacamara** is a simple blog theme for **Astro** that uses `md` and `mdx` files to store your content.
 
 You can see it live in action [**here**](https://pacamara-astro-6y7xr.kinsta.page/).
