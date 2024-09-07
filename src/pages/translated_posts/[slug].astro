@@ -9,7 +9,7 @@ import Tag from "@/components/general/Tag.astro";
 import { getCollection, getEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("blog");
+  const blogEntries = await getCollection("translated_posts");
 
   return blogEntries.map((entry) => ({
     params: { slug: entry.slug },
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
   }));
 }
 const { entry } = Astro.props;
-entry.data.type = "blog";
+entry.data.type = "translated_post";
 
 const { Content } = await entry.render();
 const author = await getEntry(entry.data.author);
@@ -36,6 +36,8 @@ const author = await getEntry(entry.data.author);
       >
         <Tag tag={entry.data.tag} />
         <PublishDate date={entry.data.pubDate} />
+        <a href={entry.data.originalUrl} class="text-pacamara-white/70">لينك المقال الاصلي</a>
+
       </p>
     </div>
     {
