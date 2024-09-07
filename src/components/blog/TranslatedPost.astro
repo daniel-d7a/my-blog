@@ -2,10 +2,9 @@
 import type {CollectionEntry} from "astro:content"
 import {  getEntry } from "astro:content";
 
-
 interface Props{
   postData: CollectionEntry<"translated_posts">;
-  num:number;
+  num: number;
 }
 
 const { postData, num } = Astro.props;
@@ -54,10 +53,10 @@ const isOdd = num % 2;
       <p
         class="flex flex-row flex-wrap gap-5 items-center mt-5 group-last:mb-0"
       >
-        <Tag tag={postData.data.tag} />
-        <p>{author.data.displayName}</p>
-        <PublishDate date={postData.data.pubDate} />
-      </p>
+      <Tag tag={postData.data.tag} />
+      <PublishDate date={postData.data.pubDate} />
+    </p>
+    <p>{author.data.displayName}</p>
     </div>
   </div>
 

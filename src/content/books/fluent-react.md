@@ -1,9 +1,10 @@
 ---
-image: "../../assets/books/fluent-react.png"
-name: "fluent react"
+image: "@/assets/books/fluent-react.png"
+name: "Fluent React"
 tags: "react, book"
-description: "this is some text about the book"
+description: "Fluent React by Tejas Kumar is a comprehensive guide designed to help developers dive deep into React, focusing on building fast, performant, and intuitive web applications. The book covers core React concepts, such as JSX syntax, the virtual DOM, React reconciliation, and advanced patterns."
 ---
+
 # Introduction & Chapter 1
 
 ## Introduction

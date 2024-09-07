@@ -20,7 +20,7 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { page } = Astro.props as Props;
 ---
 
-<Base>
+<Base postData={{data:{title: "ملخصات الكتب"}}}>
   <section dir="ltr" class=" font-pacamara-space container mx-auto max-w-screen-lg px-7 py-10 ">
     {page.data.map((book) => <Book book={book} />)}
     <Pagination page={page} />

@@ -4,7 +4,7 @@ pubDate: 2024-09-05
 intro: عمرك فكرت ايه السبب الي خلى مايكروسوفت تعمل typescript من الاول؟ تعالى عشان تعرف.
 tag: typescript
 author: eyad
-image: "../../assets/blogs/the story of ts.jpg"
+image: "@/assets/blogs/the story of ts.jpg"
 ---
 
 لو رجعت بالزمن عشان تعرف Typescript اتعملت ليه هتلاقي السبب بكل بساطة هو ان استخدام JavaScript ف المشاريع الكبيرة مكنش مريح، لانه مكنش فيه tools كويسة حوالين اللغة زي دعم ال ide لل auto complete و ال find reference و اني اشوف ال errors قبل ما اشغل الكود و غيرهم كتير.

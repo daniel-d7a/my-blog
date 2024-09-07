@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
 
-import logoImage from "../../assets/website/eyad.jpeg";
+import logoImage from "@/assets/website/eyad.jpeg";
 
-import slide1 from "../../assets/website/home/1.png";
-import slide2 from "../../assets/website/home/2.png";
-import slide4 from "../../assets/website/home/4.png";
+import slide1 from "@/assets/website/home/1.png";
+import slide2 from "@/assets/website/home/2.png";
+import slide4 from "@/assets/website/home/4.png";
+import config from "@/config.mjs";
 ---
 
 <section
@@ -23,7 +24,7 @@ import slide4 from "../../assets/website/home/4.png";
   <h1>
     <span class="gradient-underline text-3xl md:text-7xl "
       ><span class=""
-        >برمجة بأفكار مكتوبة: دليل المبرمجين من الأساسيات إلى الابتكار.</span
+        >{config.description}</span
       ></span
     >
   </h1>

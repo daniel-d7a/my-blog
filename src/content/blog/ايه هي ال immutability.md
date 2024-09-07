@@ -4,7 +4,7 @@ pubDate: 2024-08-05
 intro: مبدأ ال immutability مبدأ مهم و مستخدم بشكل كبير في javascript و react. تعالى نتعرف عليه.
 tag: immer
 author: eyad
-image: "../../assets/blogs/what is immutability.jpeg"
+image: "@/assets/blogs/what is immutability.jpeg"
 ---
 
 ايه هي ال immutability ؟

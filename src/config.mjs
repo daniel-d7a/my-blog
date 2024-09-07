@@ -1,13 +1,12 @@
 export default {
-  title: "Homepage",
-  titleSuffix: " | Blog ☕",
-  description:
-    "Aromatic brew, pure indulgence, exquisite satisfaction.Default description",
-  defaultOgImage: "./defaultog.jpg",
+  title: "الرئيسية",
+  titleSuffix: " | مدونتي ☁",
+  description: "برمجة بأفكار مكتوبة: دليل المبرمجين من الأساسيات إلى الابتكار.",
+  defaultOgImage: "./default.png",
   latestPosts: 3,
   postsPerPage: 5,
   booksPerPage: 3,
-  url: "https://pacamara-astro-6y7xr.kinsta.page",
+  url: "eyad-alsherif-blog.vercel.app",
   social: {
     facebook: "https://www.facebook.com/Eyad1Alsherif",
     github: "https://github.com/daniel-d7a",
