@@ -5,7 +5,7 @@ export default {
     "Aromatic brew, pure indulgence, exquisite satisfaction.Default description",
   defaultOgImage: "./defaultog.jpg",
   latestPosts: 3,
-  postsPerPage: 3,
+  postsPerPage: 5,
   booksPerPage: 3,
   url: "https://pacamara-astro-6y7xr.kinsta.page",
   social: {

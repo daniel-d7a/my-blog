@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import config from "@/config.mjs";
+
+import Base from "@/layouts/Base.astro";
+import Post from "@/components/blog/Post.astro";
+import Pagination from "@/components/general/Pagination.astro";
+
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const blogEntries = (await getCollection("translated_posts")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  return paginate(blogEntries, { pageSize: config.postsPerPage });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<Base>
+  <section class="container mx-auto max-w-screen-lg px-7 py-10">
+    {
+      page.data.map((post, index) => {
+        return <Post postData={post} num={index} />;
+      })
+    }
+    <Pagination {page}/>
+  </section>
+</Base>
