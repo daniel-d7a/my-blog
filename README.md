@@ -1,42 +1,30 @@
-# ☕ Pacamara - a blog theme for Astro
-testing adding to the repo
-testing fixing a pull request
-**Pacamara** is a simple blog theme for **Astro** that uses `md` and `mdx` files to store your content.
+# مدونة اياد الشريف
 
-You can see it live in action [**here**](https://pacamara-astro-6y7xr.kinsta.page/).
+المدونة دي معمولة عشان انشر عليها كتاباتي و مذاكرتي و اساهم في اثراء المحتوى العربي.
 
-![Pacamara demo screen](https://github.com/palmiak/pacamara-astro/assets/2342458/9fbe8655-ee60-4c37-8bf3-eae0cca57d91)
+المدونة فيها:
 
-## Features
-- Dark & Light mode support
-- SEO-friendly 
-- Type-safe markdown
-- Support Astro's Assets and Collections
-- Provides RSS feed
-- Astro 3.0 Compatible
-- View Transition API compatible
+- مقالات اصلية من كتابتي
+- مقالات اجنبية تم ترجمتها
+- ملخصات كتب برمجة
 
-## Installation
-If you are reading this on GitHub, you can click on the "Use this template" button above to create a new repository on your account. Then you can do a git clone to clone it to your local system.
+و انا مازلت بطور فيها و بضيفلها محتوى و مميزات جديدة مع الوقت.
 
-Than run:
-```
-npm install
-npm start
-```
+لو حابب تشارك في ترجمة المقالات شوف دليل المشاركة تحت.
 
-or you can run:
-```
-npm create astro@latest -- --template palmiak/pacamara-astro
-```
+## دليل المشاركة في ترجمة المقالات
 
-## Usage
-- **Pacamara** utilizes Astro Collections for blog posts, pages, and authors. You can find all of them in `src/content` folder
-- Most of the configuration is customizable via `src/config.mjs`.
-- The theme uses **TailwindCSS** - this means you can configure the colors using `tailwind.config.cjs`.
+لو حابب تشارك في ترجمة المقالات اقرا النقط المكتوبة
 
-## Thank you
-Without my [wife](https://agnieszkapalmowska.myportfolio.com/), this project wouldn't be half as beautiful as it looks. Also, if you are looking for an amazing designer - click the link above.
+### ترجمة المقالات
 
-## Did you enjoy this theme?
-If you don't want to miss any of the content I create, join my [weekly newsletter](https://newsletter.maciekpalmowski.dev/).
+- الترجمة لازم تكون بجودة عالية عشان المقال يتقبل
+- تقدر نسنعمل الصور الموجودة ف المقال الاصلي
+- لازم تحط رابط المقال الاصلي
+- حاول تختار مقالات بجودة عالية بتناقش مواضيع مهمة
+- تأكد من صحة بياناتك و محتوى المقال قبل النشر
+- انا اشرف على مراجعة المقالات و قبولها او رفضها بنفسي و مفيش اي حد تاني معايا
+
+### خطوات نشر مقال مترجم
+
+تقدر تشوف (الفيديو ده) [www.google.com] عشان تعرف ازاي تقدر ترفع مقال مترجم
