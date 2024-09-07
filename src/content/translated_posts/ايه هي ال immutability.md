@@ -5,6 +5,7 @@ intro: مبدأ ال immutability مبدأ مهم و مستخدم بشكل كب�
 tag: immer
 author: hamasa
 image: "../../assets/translated_posts/4.png"
+originalUrl: "https://lnkd.in/dNGmA2qD"
 ---
 
 ايه هي ال immutability ؟
