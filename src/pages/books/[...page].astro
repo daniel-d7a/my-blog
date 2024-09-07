@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import config from "@/config.mjs";
+
+import Base from "@/layouts/Base.astro";
+import Book from "@/components/books/Book.astro";
+import Pagination from "@/components/general/Pagination.astro";
+
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const books = await getCollection("books");
+  return paginate(books, {
+    pageSize: config.booksPerPage,
+  });
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page } = Astro.props as Props;
+---
+
+<Base>
+  <section dir="ltr" class=" font-pacamara-space container mx-auto max-w-screen-lg px-7 py-10 ">
+    {page.data.map((book) => <Book book={book} />)}
+    <Pagination page={page} />
+  </section>
+</Base>

@@ -1,0 +1,10 @@
+---
+import dateFormat from "dateformat";
+const {date} = Astro.props;
+---
+<small class="
+        text-pacamara-primary/50 font-changa tracking-widest transition-all duration-300 text-[16px]
+        dark:text-white/40
+    ">
+    { dateFormat(date, "dd-mm-yyyy") }
+</small>

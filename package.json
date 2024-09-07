@@ -1,0 +1,36 @@
+{
+  "name": "eyad-md-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "check": "astro check",
+    "preview": "astro preview",
+    "astro": "astro",
+    "sync": "astro sync"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.8.0",
+    "@astrojs/mdx": "^1.0.0",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/rss": "^2.4.3",
+    "@astrojs/tailwind": "^5.0.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^3.0.0",
+    "astro-icon": "^0.8.1",
+    "dateformat": "^5.0.3",
+    "react": "^19.0.0-beta",
+    "react-dom": "^19.0.0-beta",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/dateformat": "^5.0.2",
+    "prettier": "^2.8.8",
+    "prettier-plugin-astro": "^0.10.0"
+  }
+}
