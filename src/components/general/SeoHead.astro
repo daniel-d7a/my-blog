@@ -20,7 +20,9 @@ const type = postData?.data?.type ? postData.data.type : "website";
 <meta property="og:title" content={title} />
 {permalink && <meta property="og:url" content={permalink} />}
 {description && <meta property="og:description" content={description} />}
-{image && <meta property="og:image" content={new URL(image, Astro.url)} />}
+<!-- {image && <meta property="og:image" content={new URL(image, Astro.url)} />} -->
+<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/4f122a11-5e60-475c-83aa-191e3dee0ee1.png?token=oSRrgTvMzcbdF-iHk1ZfC3SysWhnFdQetSfa1LUBfqs&height=517&width=1200&expires=33261759491">
+
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
