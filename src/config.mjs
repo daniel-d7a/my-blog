@@ -2,7 +2,7 @@ export default {
   title: "الرئيسية",
   titleSuffix: " | مدونتي ☁",
   description: "برمجة بأفكار مكتوبة: دليل المبرمجين من الأساسيات إلى الابتكار.",
-  defaultOgImage: "./default.png",
+  defaultOgImage: "./default.jpg",
   latestPosts: 3,
   postsPerPage: 5,
   booksPerPage: 3,
