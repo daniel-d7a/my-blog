@@ -5,6 +5,8 @@ export const bookSchema = ({ image }: SchemaContext) =>
     image: image(),
     name: z.string(),
     tags: z.string(), // TODO: check how to turn this into an array
+    updatedAt: z.date(),
+    inProgress: z.boolean(),
     description: z.string(),
   });
 

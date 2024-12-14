@@ -16,7 +16,8 @@ function RecursiveHeaders({ nestedHeadings }: Props) {
                 className="hidden md:block leading-5 my-0"
                 style={{
                   fontSize: `${(7 - nh.depth) * 4.5}px`,
-                  lineHeight: "6px",
+                  lineHeight: `${(7 - nh.depth) * 4.5}px`,
+                  marginBlockEnd: `6px`,
                 }}
               >
                 {nh.text}
@@ -54,7 +55,13 @@ export default function ListOfContent({ nestedHeadings }: Props) {
           {isOpen ? "hide" : "show"}
         </p>
       </div>
-      <div className={`${isOpen ? "h-full" : "h-0 overflow-hidden"}`}>
+      <div
+        style={{
+          maxHeight: isOpen ? "100000px" : "0px",
+          overflowY: isOpen ? "auto" : "hidden",
+          transition: "max-height 0.5s ease",
+        }}
+      >
         <RecursiveHeaders nestedHeadings={nestedHeadings} />
       </div>
     </>
