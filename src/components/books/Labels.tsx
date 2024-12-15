@@ -7,7 +7,7 @@ export default function Labels({
 }) {
   const recentlyUpdated = getDaysDifference(book.data.updatedAt) < 30;
   return (
-    <div className="flex flex-col justify-start items-center sm:items-start sm:flex-row gap-6">
+    <div className="flex flex-col justify-start items-start sm:items-baseline sm:flex-row gap-6">
       <span className="text-pacamara-primary/50 dark:text-white/40 ">
         last updated at {dateFormat(book.data.updatedAt, "yyyy-mm-dd")}
       </span>
