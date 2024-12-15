@@ -8,16 +8,16 @@ export default function Labels({
   const recentlyUpdated = getDaysDifference(book.data.updatedAt) < 30;
   return (
     <div className="flex flex-col justify-start items-start sm:flex-row gap-6">
-      <span className="text-pacamara-primary/50 dark:text-white/40">
+      <span className="text-pacamara-primary/50 dark:text-white/40 ">
         last updated at {dateFormat(book.data.updatedAt, "yyyy-mm-dd")}
       </span>
       {book.data.inProgress && (
-        <span className="text-sm grid place-items-center -translate-y-1 text-green-600 border-green-600 dark:text-green-600/80 border-2 dark:border-green-600/80 px-4 rounded-full">
+        <span className="text-sm py-4 grid place-items-center -translate-y-1 text-green-600 border-green-600 dark:text-green-600/80 border-2 dark:border-green-600/80 px-4 rounded-full">
           work in progress 👷‍♂️
         </span>
       )}
       {recentlyUpdated && (
-        <span className="text-sm grid place-items-center -translate-y-1 text-cyan-600 border-cyan-600 dark:text-cyan-500/70 border-2 dark:border-cyan-500/70 px-4 rounded-full">
+        <span className="text-sm py-4 grid place-items-center -translate-y-1 text-cyan-600 border-cyan-600 dark:text-cyan-500/70 border-2 dark:border-cyan-500/70 px-4 rounded-full">
           recently updated ✨
         </span>
       )}
