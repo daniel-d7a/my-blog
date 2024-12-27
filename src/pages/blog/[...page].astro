@@ -19,13 +19,13 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 ---
 
-<Base postData={{data:{title: "المقالات"}}}>
+<Base postData={{ data: { title: "المقالات" } }}>
   <section class="container mx-auto max-w-screen-lg px-7 py-10">
     {
       page.data.map((post, index) => {
-        return <Post postData={post} num={index} />;
+        return <Post key={post.slug} postData={post} num={index} />;
       })
     }
-    <Pagination {page}/>
+    <Pagination {page} />
   </section>
 </Base>

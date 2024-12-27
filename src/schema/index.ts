@@ -47,3 +47,10 @@ export const translatedPostSchema = ({ image }: SchemaContext) =>
     type: z.string().optional(),
     originalUrl: z.string().url(),
   });
+
+export const ChapterSchema = ({ image }: SchemaContext) =>
+  z.object({
+    bookName: z.string(),
+    chapterTitle: z.string(),
+    updatedAt: z.date(),
+  });

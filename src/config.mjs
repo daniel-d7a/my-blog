@@ -5,7 +5,7 @@ export default {
   defaultOgImage: "./default.jpg",
   latestPosts: 3,
   postsPerPage: 5,
-  booksPerPage: 3,
+  booksPerPage: 5,
   url: "eyad-alsherif-blog.vercel.app",
   social: {
     facebook: "https://www.facebook.com/Eyad1Alsherif",

@@ -1,0 +1,28 @@
+---
+import type { Heading } from "@/types";
+
+interface Props {
+  headings: Heading[];
+  bookSlug: string;
+}
+
+const { bookSlug, headings } = Astro.props;
+const filteredHeadings = headings.filter((heading) => heading.depth === 1);
+---
+
+<ul
+  class="flex flex-col items-start justify-start font-pacamara-space gap-4 md:text-xl my-8 md:mx-24 text-sm"
+>
+  {
+    filteredHeadings.map((heading) => (
+      <Fragment key={heading.slug}>
+        <a
+          href={`/books/${bookSlug}/chapters/${heading.slug}`}
+          class="text-white bg-gray-800/60 hover:bg-gray-800 transition-colors rounded-lg w-full px-8 py-4"
+        >
+          {heading.text}
+        </a>
+      </Fragment>
+    ))
+  }
+</ul>

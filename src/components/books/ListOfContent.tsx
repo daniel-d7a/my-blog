@@ -1,5 +1,5 @@
 import type { NestedHeading } from "@/types";
-import { useCallback, useState } from "react";
+import { Fragment, useCallback, useState } from "react";
 interface Props {
   nestedHeadings: NestedHeading[];
 }
@@ -8,7 +8,7 @@ function RecursiveHeaders({ nestedHeadings }: Props) {
   return (
     <div>
       {nestedHeadings.map((nh) => (
-        <>
+        <Fragment key={nh.slug}>
           <div className="flex item-base">
             <a href={`#${nh.slug}`}>
               {/* for large screens */}
@@ -38,14 +38,14 @@ function RecursiveHeaders({ nestedHeadings }: Props) {
               <RecursiveHeaders nestedHeadings={nh.nestedHeadings} />
             )}
           </div>
-        </>
+        </Fragment>
       ))}
     </div>
   );
 }
 
 export default function ListOfContent({ nestedHeadings }: Props) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const toggle = useCallback(() => setIsOpen((x) => !x), []);
   return (
     <>

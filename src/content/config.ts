@@ -2,10 +2,11 @@ import {
   authorSchema,
   blogSchema,
   bookSchema,
+  ChapterSchema,
   pageSchema,
   translatedPostSchema,
 } from "@/schema";
-import { defineCollection } from "astro:content";
+import { defineCollection, z } from "astro:content";
 
 const blogCollection = defineCollection({
   type: "content",
@@ -32,10 +33,16 @@ const translatedPostsCollection = defineCollection({
   schema: translatedPostSchema,
 });
 
+const chaptersCollection = defineCollection({
+  type: "content",
+  schema: ChapterSchema,
+});
+
 export const collections = {
   blog: blogCollection,
   author: authorCollection,
   page: pageCollection,
   books: booksCollection,
   translated_posts: translatedPostsCollection,
+  chapters: chaptersCollection,
 };

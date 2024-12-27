@@ -1,0 +1,22 @@
+---
+import {
+  ChapterSideBar,
+  ChaptersSheet,
+} from "@/components/books/ChapterSideBar";
+
+interface Props {
+  book: any;
+  currentChapter: string;
+}
+
+const { book, currentChapter } = Astro.props;
+---
+
+<main class="flex relative">
+    <ChaptersSheet
+      client:only="react"
+      book={book}
+      currentChapter={currentChapter}
+    />
+  <slot />
+</main>

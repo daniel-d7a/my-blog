@@ -3,7 +3,7 @@ import { ViewTransitions } from "astro:transitions";
 import SeoHead from "../components/general/SeoHead.astro";
 import Header from "../components/general/Header.astro";
 import Footer from "../components/general/Footer.astro";
-import "../css/style.css";
+import "../styles/style.css";
 
 const { postData } = Astro.props;
 ---
@@ -72,9 +72,12 @@ const { postData } = Astro.props;
       crossorigin
     />
     <link rel="icon" type="image/x-icon" href="./cloud.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
     <ViewTransitions />
   </head>
 

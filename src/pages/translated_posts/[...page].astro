@@ -6,7 +6,6 @@ import Base from "@/layouts/Base.astro";
 import Pagination from "@/components/general/Pagination.astro";
 import TranslatedPost from "@/components/blog/TranslatedPost.astro";
 
-
 import type { GetStaticPaths } from "astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -20,13 +19,13 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 ---
 
-<Base postData={{data:{title: "المقالات المترجمة"}}}>
+<Base postData={{ data: { title: "المقالات المترجمة" } }}>
   <section class="container mx-auto max-w-screen-lg px-7 py-10">
     {
       page.data.map((post, index) => {
         return <TranslatedPost postData={post} num={index} />;
       })
     }
-    <Pagination {page}/>
+    <Pagination {page} />
   </section>
 </Base>

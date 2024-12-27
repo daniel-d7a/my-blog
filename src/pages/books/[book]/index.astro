@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+
+import Base from "@/layouts/Base.astro";
+import Tag from "@/components/general/Tag.astro";
+import { getNestedHeadings, nestHeadings } from "@/utils/getNestedHeadings";
+
+import { getCollection, type CollectionEntry } from "astro:content";
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+import Labels from "@/components/books/Labels.tsx";
+import ChaptersList from "@/components/books/ChaptersList.astro";
+
+export const getStaticPaths = (async () => {
+  const books: CollectionEntry<"books">[] = await getCollection("books");
+  return books.map((entry) => ({
+    params: { book: entry.slug },
+    props: { entry },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { entry } = Astro.props as Props;
+const { headings } = await entry.render();
+
+const nestedHeadings = nestHeadings(headings);
+---
+
+<Base postData={entry}>
+  <article dir="ltr" class="font-pacamara-space px-7 pt-10 mx-auto w-full">
+    <div class="flex-col flex md:flex-row items-start justify-start md:px-24">
+      <Image
+        src={entry.data.image}
+        width="600"
+        height="800"
+        alt=""
+        loading="eager"
+        decoding="sync"
+        class="block relative object-top object-contain h-72 sm:h-[50vw] image-shine rounded-[15px]"
+        loading="eager"
+      />
+      <div
+        class="md:mx-8 prose mt-4 lg:prose-xl prose-headings:font-bold prose-headings:text-pacamara-dark prose-headings:mb-3"
+      >
+        <h1 class="transition-all capitalize duration-300 dark:text-white">
+          {entry.data.name}
+        </h1>
+        <p class="text-pacamara-primary/70 dark:text-pacamara-white/50">
+          {entry.data.description}
+        </p>
+        <p
+          class="flex flex-row flex-wrap gap-5 items-center font-pacamara-space mx-auto max-w-screen-lg mb-7"
+        >
+          {
+            entry.data.tags
+              .split(",")
+              .map((tag: string) => <Tag key={tag} tag={tag.trim()} />)
+          }
+        </p>
+        <Labels book={entry} />
+      </div>
+    </div>
+
+    <ChaptersList bookSlug={entry.slug} headings={nestedHeadings} />
+  </article>
+</Base>
