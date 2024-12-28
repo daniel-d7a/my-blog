@@ -2,7 +2,7 @@
 title: قصة typescript
 pubDate: 2024-09-05
 intro: عمرك فكرت ايه السبب الي خلى مايكروسوفت تعمل typescript من الاول؟ تعالى عشان تعرف.
-tag: typescript
+tags: ["typescript"]
 author: eyad
 image: "@/assets/blogs/the story of ts.jpg"
 originalUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7237061998130135040/"

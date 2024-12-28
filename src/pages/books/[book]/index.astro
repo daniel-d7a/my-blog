@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 
 import Base from "@/layouts/Base.astro";
-import Tag from "@/components/general/Tag.astro";
-import { getNestedHeadings, nestHeadings } from "@/utils/getNestedHeadings";
+import Tags from "@/components/general/Tags.astro";
+import { nestHeadings } from "@/utils/getNestedHeadings";
 
 import { getCollection, type CollectionEntry } from "astro:content";
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
@@ -51,11 +51,7 @@ const nestedHeadings = nestHeadings(headings);
         <p
           class="flex flex-row flex-wrap gap-5 items-center font-pacamara-space mx-auto max-w-screen-lg mb-7"
         >
-          {
-            entry.data.tags
-              .split(",")
-              .map((tag: string) => <Tag key={tag} tag={tag.trim()} />)
-          }
+          <Tags tags={entry.data.tags} />
         </p>
         <Labels book={entry} />
       </div>

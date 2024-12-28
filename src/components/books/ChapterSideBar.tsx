@@ -1,27 +1,17 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import type { NestedHeading } from "@/types";
+import type { Heading, NestedHeading } from "@/types";
 import { nestHeadings } from "@/utils/getNestedHeadings";
 import { Fragment } from "react/jsx-runtime";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-export function ChaptersSheet({
-  book,
-  currentChapter,
-}: {
-  book: any;
+export function ChaptersSheet(props: {
+  headings: Heading[];
   currentChapter: string;
+  bookName: string;
 }) {
-  const { headings } = book;
-  const chapterHeaders = headings.filter((h: any) => h.depth === 1);
-  const contentHeadings = nestHeadings(headings);
-
-  const currentContent = contentHeadings.find(
-    (h) => h.slug === currentChapter
-  )!;
-
   return (
     <Sheet>
-      <SheetTrigger className="text-white bg-gray-800/60 p-2 rounded-full fixed bottom-4 right-4 md:bottom-8 md:right-8">
+      <SheetTrigger className="text-white bg-gray-800/60 p-2 rounded-full fixed bottom-4 left-4 md:bottom-8 md:left-8">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1.4em"
@@ -30,9 +20,9 @@ export function ChaptersSheet({
         >
           <path
             fill="currentColor"
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M2 8a1 1 0 0 1 1-1h10.308a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0-4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 4a1 1 0 0 1 1-1h10.308a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
       </SheetTrigger>
@@ -40,26 +30,30 @@ export function ChaptersSheet({
         side={"left"}
         className="w-[85%] border-none bg-black/80 px-4"
       >
-        <ChapterSideBar book={book} currentChapter={currentChapter} />
+        <ChapterSideBar {...props} />
       </SheetContent>
     </Sheet>
   );
 }
 
 export function ChapterSideBar({
-  book,
+  headings,
+  bookName,
   currentChapter,
 }: {
-  book: any;
+  headings: Heading[];
   currentChapter: string;
+  bookName: string;
 }) {
-  const { headings } = book;
   const chapterHeaders = headings.filter((h: any) => h.depth === 1);
-  const contentHeadings = nestHeadings(headings);
-
-  const currentContent = contentHeadings.find(
+  const currentContent = nestHeadings(headings).find(
     (h) => h.slug === currentChapter
   )!;
+
+  console.log("-----------------------------");
+  console.log(headings);
+  console.log("chapter", currentChapter);
+  console.log(currentContent);
 
   return (
     <Tabs defaultValue="Content" className="w-full sticky top-8">
@@ -91,7 +85,7 @@ export function ChapterSideBar({
                 className="text-lg flex gap-2 hover:bg-gray-800/60 p-2 cursor-pointer"
               >
                 <div className="translate-y-1 inline-block">*</div>
-                <a href={`/books/${"asd"}/chapters/${h.slug}`}>{h.text}</a>
+                <a href={`/books/${bookName}/chapters/${h.slug}`}>{h.text}</a>
               </li>
             ))}
           </ul>

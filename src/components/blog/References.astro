@@ -1,0 +1,25 @@
+---
+import { reference } from "astro:content";
+
+interface Props {
+  references: string[];
+}
+
+let { references } = Astro.props;
+---
+
+{
+  references.length && (
+    <div class="text-white/80 pt-8">
+      <p class=" text-2xl mb-6 font-bold">المصادر</p>
+      <ul class="list-none text-lg text-pacamara-accent underline">
+        {references.map((r) => (
+          <li>
+            <span class="me-2 inline-block translate-y-1 text-white">*</span>{" "}
+            <a href={r}>{r} </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}

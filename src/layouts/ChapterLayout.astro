@@ -3,20 +3,19 @@ import {
   ChapterSideBar,
   ChaptersSheet,
 } from "@/components/books/ChapterSideBar";
-
+import type { Heading } from "@/types";
 interface Props {
-  book: any;
-  currentChapter: string;
+  headings: Heading[];
 }
-
-const { book, currentChapter } = Astro.props;
+const [_space, _, bookName, __, currentChapter] = Astro.url.pathname.split("/");
 ---
 
 <main class="flex relative">
-    <ChaptersSheet
-      client:only="react"
-      book={book}
-      currentChapter={currentChapter}
-    />
+  <ChaptersSheet
+    client:only="react"
+    headings={Astro.props.headings}
+    {bookName}
+    {currentChapter}
+  />
   <slot />
 </main>

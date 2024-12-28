@@ -1,0 +1,12 @@
+---
+import Tag from "./Tag.astro";
+
+interface Props {
+  tags: string[];
+}
+const { tags } = Astro.props;
+---
+
+<Fragment>
+  {tags.map((t) => <Tag tag={t} />)}
+</Fragment>

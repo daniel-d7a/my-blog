@@ -1,7 +1,7 @@
 ---
 image: "@/assets/books/seven databases in seven weeks.jpg"
 name: "Seven Databases In Seven Weeks"
-tags: "database, book"
+tags: ["database", "book"]
 updatedAt: 2024-12-14
 inProgress: true
 description: "Data is getting bigger and more complex by the day, and so are the choices in handling that data. As a modern application developer you need to understand the emerging field of data management, both RDBMS and NoSQL. Seven Databases in Seven Weeks takes you on a tour of some of the hottest open source databases today. In the tradition of Bruce A. Tate's Seven Languages in Seven Weeks, this book goes beyond your basic tutorial to explore the essential concepts at the core each technology.

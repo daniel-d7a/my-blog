@@ -43,8 +43,8 @@
 :root {
   --gradient-space: 20px;
   --gradient-height: 2px;
+  scroll-behavior: smooth;
 }
-
 
 .gradient-line {
   background-image: linear-gradient(

@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-import Tag from "@/components/general/Tag.astro";
+import Tags from "@/components/general/Tags.astro";
 import type { CollectionEntry } from "astro:content";
 import Labels from "@/components/books/Labels.tsx";
 interface Props {
@@ -45,11 +45,7 @@ const { book } = Astro.props;
       <p
         class="flex flex-row flex-wrap gap-5 items-center mt-5 group-last:mb-0"
       >
-        {
-          book.data.tags
-            .split(",")
-            .map((tag) => <Tag key={tag} tag={tag.trim()} />)
-        }
+        <Tags tags={book.data.tags} />
       </p>
       <Labels {book} />
     </div>

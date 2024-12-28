@@ -1,7 +1,7 @@
 ---
 image: "@/assets/books/head-first-object-oriented-analysis-and-design.png"
 name: "Head First Object Oriented Analysis & Design"
-tags: "OOP, book"
+tags: ["OOP", "book"]
 updatedAt: 2024-12-14
 inProgress: true
 description: "Tired of reading Object Oriented Analysis and Design books that only makes sense after you're an expert? You've heard OOA&D can help you write great software every time-software that makes your boss happy, your customers satisfied and gives you more time to do what makes you happy. But how?

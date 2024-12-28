@@ -4,7 +4,7 @@ export const bookSchema = ({ image }: SchemaContext) =>
   z.object({
     image: image(),
     name: z.string(),
-    tags: z.string(), // TODO: check how to turn this into an array
+    tags: z.array(z.string()),
     updatedAt: z.date(),
     inProgress: z.boolean(),
     description: z.string(),
@@ -29,18 +29,19 @@ export const blogSchema = ({ image }: SchemaContext) =>
   z.object({
     title: z.string(),
     intro: z.string(),
-    tag: z.string(),
+    tags: z.array(z.string()),
     image: image(),
     author: reference("author"),
     pubDate: z.date(),
     type: z.string().optional(),
+    references: z.array(z.string()),
   });
 
 export const translatedPostSchema = ({ image }: SchemaContext) =>
   z.object({
     title: z.string(),
     intro: z.string(),
-    tag: z.string(),
+    tags: z.array(z.string()),
     image: image(),
     author: reference("author"),
     pubDate: z.date(),

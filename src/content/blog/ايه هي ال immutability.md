@@ -2,9 +2,10 @@
 title: ايه هي ال immutability
 pubDate: 2024-08-05
 intro: مبدأ ال immutability مبدأ مهم و مستخدم بشكل كبير في javascript و react. تعالى نتعرف عليه.
-tag: immer
+tags: ["immer"]
 author: eyad
 image: "@/assets/blogs/what is immutability.jpeg"
+references: []
 ---
 
 ايه هي ال immutability ؟

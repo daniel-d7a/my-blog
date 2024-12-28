@@ -1,8 +1,8 @@
 ---
-import type {CollectionEntry} from "astro:content"
-import {  getEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
 
-interface Props{
+interface Props {
   postData: CollectionEntry<"translated_posts">;
   num: number;
 }
@@ -10,7 +10,7 @@ interface Props{
 const { postData, num } = Astro.props;
 import { Image } from "astro:assets";
 import PublishDate from "./PublishDate.astro";
-import Tag from "../general/Tag.astro";
+import Tags from "../general/Tags.astro";
 
 const author = await getEntry(postData.data.author);
 
@@ -53,14 +53,15 @@ const isOdd = num % 2;
       <p
         class="flex flex-row flex-wrap gap-5 items-center mt-5 group-last:mb-0"
       >
-      <Tag tag={postData.data.tag} />
-      <PublishDate date={postData.data.pubDate} />
-    </p>
-    <p>{author.data.displayName}</p>
+        <Tags tags={postData.data.tags} />
+        <PublishDate date={postData.data.pubDate} />
+      </p>
+      <p>{author.data.displayName}</p>
     </div>
   </div>
 
-  
-    <div class="w-full h-[1px] mt-10 lg:mt-[50px] overflow-hidden gradient-line group-last:hidden"></div>
-  
+  <div
+    class="w-full h-[1px] mt-10 lg:mt-[50px] overflow-hidden gradient-line group-last:hidden"
+  >
+  </div>
 </article>
