@@ -4,8 +4,22 @@ import mdx from "@astrojs/mdx";
 import icon from "astro-icon";
 import react from "@astrojs/react";
 
+import expressiveCode from "astro-expressive-code";
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx(), react(), icon()],
+  integrations: [
+    tailwind(),
+    react(),
+    icon(),
+    expressiveCode({
+      plugins: [pluginLineNumbers()],
+      defaultProps: {
+        showLineNumbers: false,
+      },
+    }),
+    mdx(),
+  ],
   site: "https://pacamara-astro-6y7xr.kinsta.page",
 });
