@@ -20,8 +20,10 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 entry.data.type = "blog";
 
-const { Content } = await entry.render();
+const { Content, remarkPluginFrontmatter } = await entry.render();
 const author = await getEntry(entry.data.author);
+
+const num = remarkPluginFrontmatter.minutesRead.split(" ")[0];
 ---
 
 <Base postData={entry}>
@@ -37,6 +39,7 @@ const author = await getEntry(entry.data.author);
       >
         <Tags tags={entry.data.tags} />
         <PublishDate date={entry.data.pubDate} />
+        <span>{num} دقيقة</span>
       </p>
     </div>
     {
